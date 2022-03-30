@@ -15,7 +15,7 @@ pipeline {
 
      stage ('Build') {
        steps {
-         sh 'mvn package'
+         sh 'mvn install'
        }
         
 
@@ -23,7 +23,7 @@ pipeline {
 
      stage ('Test') {
        steps {
-         sh 'mvn test'
+         echo 'deploying the application'
        }
         
 
