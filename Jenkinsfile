@@ -7,7 +7,7 @@ pipeline {
    stages {
      stage ('Fetch code') {
        steps {
-         git branch: 'master', url: 'https://github.com/dabhadehim1984/second-demo-project.git'
+         sh 'mvn clean'
        }
         
 
@@ -15,7 +15,7 @@ pipeline {
 
      stage ('Build') {
        steps {
-         sh "mvn install"
+         sh 'mvn package install'
        }
         
 
@@ -23,7 +23,7 @@ pipeline {
 
      stage ('Test') {
        steps {
-         sh "mvn test"
+         sh 'mvn test'
        }
         
 
